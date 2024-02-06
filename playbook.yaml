@@ -1,0 +1,26 @@
+- hosts: all
+  become: true
+  vars:
+    ansible_connection: aws_ssm
+    ansible_aws_ssm_bucket_name: saxnio-dev-bucket
+    ansible_aws_ssm_region: ap-southeast-1
+    ssm_timeout: 60
+
+  tasks:
+    # - name: gather ec2 facts
+    #   action: ec2_facts
+
+    - name: Update apt repo and cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+
+    - name: Check if a reboot is needed
+      register: reboot_required_file
+      stat:
+        path: /var/run/reboot-required
+        get_md5: no

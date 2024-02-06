@@ -1,0 +1,7 @@
+plugin: aws_ec2
+regions:
+  - ap-southeast-1
+hostnames:
+  - i-05e1cf3b3397579bb
+filters:
+  instance-state-name: running
