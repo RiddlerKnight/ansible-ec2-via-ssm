@@ -1,6 +1,12 @@
 # Getting start with Ansible init ec2
 
-step
+## Prerequisite
+
+1. create s3 bucket even if you didn't have any file to update to target instance.
+
+2. login you aws session on your pc or ansible execution host.
+
+## steps
 
 1. install awscli and session-manager plugin
 
