@@ -48,3 +48,5 @@ ansible-galaxy collection install community.aws
 ```bash
 ansible-playbook -i inventory.aws_ec2.yaml playbook.yaml
 ```
+
+Test doc
